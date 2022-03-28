@@ -9,7 +9,7 @@ export const CarouselItem = ({ children, width }: any) => {
       display="inline-flex"
       align="center"
       justifyContent="center"
-      height="20rem"
+      height="50rem"
       backgroundColor="primary.100"
       color="primary.800"
       className="carousel-item"
@@ -67,6 +67,7 @@ const Carousel = ({ children }: any) => {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       overflow="hidden"
+      boxSizing="content-box"
     >
       <Box
         className="inner"

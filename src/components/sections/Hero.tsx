@@ -43,6 +43,7 @@ const Hero = ({
     >
       <Box
         w={{ base: "80%", md: "50%" }}
+        p={{ base: 8, md: 0 }}
         mb={{ base: 12, md: 0 }}
         mt={{ base: 16, md: 0 }}
       >
