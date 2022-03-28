@@ -49,13 +49,13 @@ const Hero = ({
       >
         <Carousel>
           <CarouselItem>
-            <Image src={image} rounded="1rem" shadow="2xl" />
+            <Image src={image} rounded="1rem" shadow="lg" />
           </CarouselItem>
           <CarouselItem>
-            <Image src={image2} rounded="1rem" shadow="2xl" />
+            <Image src={image2} rounded="1rem" shadow="lg" />
           </CarouselItem>
           <CarouselItem>
-            <Image src={image3} rounded="1rem" shadow="2xl" />
+            <Image src={image3} rounded="1rem" shadow="lg" />
           </CarouselItem>
         </Carousel>
       </Box>

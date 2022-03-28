@@ -10,7 +10,7 @@ const Layout = (props: any) => {
       direction="column"
       align="center"
       maxW={{ xl: "120rem" }}
-      m="0 aut0"
+      m="0 auto"
       {...props}
     >
       <Header />

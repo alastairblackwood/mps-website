@@ -8,8 +8,18 @@ import {
   Stack,
   useColorModeValue,
   VisuallyHidden,
+  VStack,
 } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FaApple,
+  FaSpotify,
+  FaGooglePlay,
+  FaYoutube,
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaSoundcloud,
+} from "react-icons/fa";
 
 const SocialButton = ({
   children,
@@ -57,25 +67,58 @@ const Footer = () => {
       >
         <Stack direction="row" spacing={10} mb={4}>
           <SocialButton
-            label="GitHub"
-            href={"https://github.com/alastairblackwood"}
+            label="Apple"
+            href={
+              "https://music.apple.com/us/artist/motion-picture-soundtrack/163261601"
+            }
           >
-            <FaGithub size="10rem" />
+            <FaApple size="10rem" />
           </SocialButton>
           <SocialButton
-            label="LinkedIn"
-            href={"https://www.linkedin.com/in/alastair-blackwood-1262888a/"}
+            label="Spotify"
+            href={
+              "https://open.spotify.com/artist/0hK5VUQ7uhgezxt2YCqiB0?si=fxMGL1apTI-1TM1XSztQow"
+            }
           >
-            <FaLinkedin size="10rem" />
+            <FaSpotify size="10rem" />
           </SocialButton>
-          <SocialButton label={"Twitter"} href={"#"}>
+          <SocialButton
+            label="YouTube"
+            href={
+              "https://music.youtube.com/channel/UCTy5qUNP5bk-NckveoZts9A?feature=share"
+            }
+          >
+            <FaYoutube size="10rem" />
+          </SocialButton>
+          <SocialButton
+            label="SoundCloud"
+            href={"https://soundcloud.com/motionpicturesoundtrack"}
+          >
+            <FaSoundcloud size="10rem" />
+          </SocialButton>
+          <SocialButton
+            label="Facebook"
+            href={"https://www.facebook.com/motionpicturesoundtrack"}
+          >
+            <FaFacebook size="10rem" />
+          </SocialButton>
+          <SocialButton
+            label="Instagram"
+            href={"https://www.instagram.com/motionpix/?hl=en"}
+          >
+            <FaInstagram size="10rem" />
+          </SocialButton>
+          <SocialButton
+            label={"Twitter"}
+            href={"https://twitter.com/mpsofficial"}
+          >
             <FaTwitter size="5rem" />
           </SocialButton>
         </Stack>
         <Flex>
           <Text
             color="brand.700"
-            fontSize=".7rem"
+            fontSize="1rem"
             fontWeight="semibold"
             textTransform="capitalize"
           >
