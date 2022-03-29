@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Music from "./pages/Music";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Gallery from "./pages/Gallery";
+import Videos from "./pages/Videos";
 
 const App = () => {
   return (
@@ -15,8 +17,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/music" element={<Music />} />
-          <Route path="/gallery" element={<Music />} />
-          <Route path="/videos" element={<Music />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/videos" element={<Videos />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Flex>

@@ -45,8 +45,7 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }: MenuItemsProps) => {
 const Header = (props: any) => {
   const [show, setShow] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = useRef();
-  const toggleMenu = () => setShow(!show);
+  const btnRef = useRef<HTMLInputElement>(null);
 
   return (
     <Flex
@@ -79,7 +78,7 @@ const Header = (props: any) => {
       ></Button>
       <Drawer
         isOpen={isOpen}
-        color="black"
+        colorScheme="black"
         placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
