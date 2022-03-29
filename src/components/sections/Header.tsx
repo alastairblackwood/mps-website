@@ -1,4 +1,4 @@
-import React from "react";
+import React, { LegacyRef } from "react";
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -73,7 +73,8 @@ const Header = (props: any) => {
         rightIcon={<MdMenu size="2rem" />}
         variant="outline"
         color="black"
-        ref={btnRef}
+        // below ref is cast Typescript error but works.
+        ref={btnRef as LegacyRef<HTMLButtonElement>}
         onClick={onOpen}
       ></Button>
       <Drawer
@@ -86,9 +87,11 @@ const Header = (props: any) => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Menu</DrawerHeader>
+          <DrawerHeader fontWeight="normal" fontSize="2rem">
+            Menu
+          </DrawerHeader>
 
-          <DrawerBody>
+          <DrawerBody fontWeight="thin" fontSize="2rem" mb="2rem">
             {" "}
             <MenuItem to="/">Home</MenuItem>
             <MenuItem to="/about">About </MenuItem>
