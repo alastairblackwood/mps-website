@@ -1,10 +1,24 @@
 import React from "react";
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Flex, Box, Text, Button } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  Text,
+  Button,
+  useDisclosure,
+  DrawerOverlay,
+  Drawer,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerHeader,
+  DrawerBody,
+  DrawerFooter,
+} from "@chakra-ui/react";
 import Logo from "../ui/Logo";
 import { AiOutlineClose } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdMenu } from "react-icons/md";
 import { ColorModeSwitcher } from "../../ColorModeSwitcher";
 import NavButton from "../ui/Button";
 
@@ -30,6 +44,8 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }: MenuItemsProps) => {
 
 const Header = (props: any) => {
   const [show, setShow] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = useRef();
   const toggleMenu = () => setShow(!show);
 
   return (
@@ -52,14 +68,44 @@ const Header = (props: any) => {
         />
       </Flex>
 
-      {/* Hamburger / close button toggle */}
-      <Box display={{ base: "block", md: "none" }} onClick={toggleMenu}>
-        {show ? (
-          <AiOutlineClose color="black" size="2rem" />
-        ) : (
-          <GiHamburgerMenu color="black" size="2rem" />
-        )}
-      </Box>
+      <Button
+        display={{ base: "block", md: "none" }}
+        size="lg"
+        rightIcon={<MdMenu size="2rem" />}
+        variant="outline"
+        color="black"
+        ref={btnRef}
+        onClick={onOpen}
+      ></Button>
+      <Drawer
+        isOpen={isOpen}
+        color="black"
+        placement="right"
+        onClose={onClose}
+        finalFocusRef={btnRef}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Menu</DrawerHeader>
+
+          <DrawerBody>
+            {" "}
+            <MenuItem to="/">Home</MenuItem>
+            <MenuItem to="/about">About </MenuItem>
+            <MenuItem to="/music">Music </MenuItem>
+            <MenuItem to="/gallery">Gallery </MenuItem>
+            <MenuItem to="/videos">Videos </MenuItem>
+            <MenuItem to="/contact">Contact </MenuItem>
+            <ColorModeSwitcher />
+          </DrawerBody>
+          <DrawerFooter>
+            <Button variant="outline" mr={3} onClick={onClose}>
+              Close
+            </Button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
 
       {/* mobile break points */}
       <Box

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Box, Flex } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 import Home from "./pages/Home";
-import Discography from "./pages/Discography";
+import Music from "./pages/Music";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
@@ -14,7 +14,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/discography" element={<Discography />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/gallery" element={<Music />} />
+          <Route path="/videos" element={<Music />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Flex>

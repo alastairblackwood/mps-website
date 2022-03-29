@@ -38,7 +38,7 @@ const Hero = ({
       wrap="nowrap"
       minH="70vh"
       px={8}
-      mb={16}
+      mb={12}
       {...rest}
     >
       <Box

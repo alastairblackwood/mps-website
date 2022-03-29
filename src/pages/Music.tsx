@@ -1,8 +1,8 @@
 import React from "react";
 import Layout from "../components/layouts/Layout";
 
-const Discography = () => {
+const Music = () => {
   return <Layout />;
 };
 
-export default Discography;
+export default Music;
